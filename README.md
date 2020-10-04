@@ -8,4 +8,4 @@ The repo contains two versions of the project:
 
 The library recreates the following functions for files: fopen, fclose, fgetc, fputc,
 fread, fwrite, fseek, ftell, fflush, feof, ferror.
-It also allows for launching new processes with popen and pclose, via execl (Linux)/CreateProcess (WIN32).
+It also allows for launching (and finishing) new processes with popen (and pclose), via execl (Linux)/CreateProcess (WIN32).

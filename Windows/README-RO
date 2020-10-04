@@ -1,0 +1,21 @@
+(!) Explicațiile din README trebuie coroborate comentariilor ce însoțesc
+codul, pentru a putea înțelege în totalitate implementarea.
+
+1. Organizare
+Proiectul cuprinde, ca structură, fișierul principal (lib_generator.c) și
+fișierele .h asociate. Am creat fișierul stdio_internal.h pentru a
+susține implementarea din spatele structurii SO_FILE, foarte asemănă-
+toare în cazul ambelor sisteme de operare.
+Fișierul principal cuprinde strict implementarea funcțiilor de bibliotecă.
+Despre eficiența implementării în sine, consider că abordarea curentă
+aduce o performanță acceptabilă, țințând cont de alegerea modului în care
+se face buffering - se încearcă întotdeauna încărcarea la maximum a buffer-
+ului și reducerea numărului de apeluri de sistem read/write; se verifică
+în mod constant valorile de retur ale funcțiilor.
+
+2. Cum se compilează și cum se rulează?
+Proiectul cuprinde cele 2 fișiere Makefile, câte unul corespunzător fiecărei
+platforme, cu reguli de build și clean și structuri asemănătoare celei
+din laboratoare.
+Fiind vorba de o bibliotecă, rularea nu se face efectiv, ci prin inter-
+mediul unor programe ce importă funcțiile de bibliotecă.

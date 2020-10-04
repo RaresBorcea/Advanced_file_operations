@@ -1,6 +1,6 @@
 # Advanced_file_operations
 Shared-library which recreates advanced file operations (fopen, fputc, popen etc.).
-It includes buffering capabilities.
+It includes buffering capabilities, thus reducing read/write system-calls.
 
 The repo contains two versions of the project:
 - one for Windows, which, at build, creates the so_stdio.dll dynamic-link library;

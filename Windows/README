@@ -1,0 +1,45 @@
+============== Tema 2 SO ================
+Borcea Rareș Ioan; Grupa 334CC; 2019-2020
+
+(!) Explicațiile din README trebuie coroborate comentariilor ce însoțesc
+codul, pentru a putea înțelege în totalitate implementarea.
+
+1. Organizare
+Tema cuprinde, ca structură, fișierul principal (lib_generator.c) și
+fișierele .h asociate. Am creat fișierul stdio_internal.h pentru a
+susține implementarea din spatele structurii SO_FILE, foarte asemănă-
+toare în cazul ambelor sisteme de operare.
+Fișierul principal cuprinde strict implementarea funcțiilor de bibliotecă.
+Despre utilitatea temei: spre deosebire de prima temă, în acest caz am
+simțit și o încărcare relativ rezonabilă (nu excesivă ca la prima) și
+am învățat și lucruri noi; am aprofundat în special aspectele care țin
+de sistemul de operare Windows, cu care nu am interacționat la fel de
+mult nici la laboratoare.
+Despre eficiența implementării în sine, consider că abordarea curentă
+aduce o performanță acceptabilă, țințând cont de alegerea modului în care
+se face buffering - se încearcă întotdeauna încărcarea la maximum a buffer-
+ului și reducerea numărului de apeluri de sistem read/write; se verifică
+în mod constant valorile de retur ale funcțiilor.
+
+2. Implementare
+S-a realizat implementarea întregului enunț al temei, astfel încât rula-
+rea să fie posibilă pe ambele platforme, cu o excepție: am fost nevoit
+să dezactivez, prin condiția de început, apelul popen în "w" în Windows
+din cauza unei erori pe care nu am putut-o identifica în timp util - de
+aici și problema de la testul 41 pe această platformă. Aș aprecia dacă,
+acum că a trecut perioada de rezolvare a temei, cineva ar putea acorda
+5-10 minute și mi-ar sugera rezolvarea problemei pentru write prin pipe.
+Chiar îmi doresc să înțeleg unde greșeam.
+Verificările realizate la începutul funcțiilor, dacă pot fi apelate în
+contextul respectiv (să nu fi apărut erori, operația anterioară nu ar
+permite, etc.) ar fi un aspect interesant din implementare. 
+
+3. Cum se compilează și cum se rulează?
+Tema cuprinde cele 2 fișiere Makefile, câte unul corespunzător fiecărei
+platforme, cu reguli de build și clean și structuri asemănătoare celei
+din laboratoare.
+Fiind vorba de o bibliotecă, rularea nu se face efectiv, ci prin inter-
+mediul unor programe ce importă funcțiile de bibliotecă.
+
+4. Bibliografie
+Makefile-uri - laboratoare SO
